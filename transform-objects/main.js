@@ -54,6 +54,39 @@ scene.add(axesHelper); //y-green, x-red, z-is blue but hidden because it is alig
 // cubeMesh.rotation.y = Math.PI * 0.25
 
 //Scene graph
+// const group = new THREE.Group();
+// group.scale.y = 2
+// group.rotation.y += 0.1
+// scene.add(group);
+
+// const cube1 = new THREE.Mesh(
+//     new THREE.BoxGeometry(1,1,1),
+//     new THREE.MeshBasicMaterial({color:0xff0000})
+// );
+// cube1.position.x = -1.5
+
+// const cube2 = new THREE.Mesh(
+//     new THREE.BoxGeometry(1,1,1),
+//     new THREE.MeshBasicMaterial({color:0xff0000})
+// );
+// cube2.position.x =0
+// group.add(cube2)
+
+// const cube3 = new THREE.Mesh(
+//     new THREE.BoxGeometry(1,1,1),
+//     new THREE.MeshBasicMaterial({color:0xff0000})
+// );
+// cube3.position.x = 1.5
+
+// const cube4 = new THREE.Mesh(
+//     new THREE.BoxGeometry(1,1,1),
+//     new THREE.MeshBasicMaterial({color:0x00ff00})
+// );
+// cube4.position.x = 3
+// group.add(cube3)
+// scene.add(cube1)
+// scene.add(cube4)
+
 const group = new THREE.Group();
 group.scale.y = 2
 group.rotation.y = 0.2
@@ -64,23 +97,24 @@ const cube1 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({color:0xff0000})
 );
 cube1.position.x = -1.5
+cube1.rotation.x = 0.2
 group.add(cube1)
 
 const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
     new THREE.MeshBasicMaterial({color:0xff0000})
 );
-cube2.position.x =0
+cube2.position.x = 0
 group.add(cube2)
 
 const cube3 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
     new THREE.MeshBasicMaterial({color:0xff0000})
 );
-cube3.position.x = 1.5
+cube2.position.x = 1.5
 group.add(cube3)
 
-function animate(){
+function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene,camera);
 }
