@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Interactive Cubes - Week 13</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        #info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            font-size: 14px;
+            min-width: 300px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        #info-panel h2 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #00d9ff;
+            border-bottom: 2px solid #00d9ff;
+            padding-bottom: 10px;
+        }
+        .info-section {
+            margin-bottom: 15px;
+        }
+        .info-label {
+            color: #00d9ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .info-content {
+            padding-left: 10px;
+            line-height: 1.8;
+        }
+        .placeholder {
+            color: #888;
+            font-style: italic;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .coord-x { color: #ff6b6b; }
+        .coord-y { color: #4ecdc4; }
+        .coord-z { color: #95e1d3; }
+        .size-w { color: #ffd93d; }
+        .size-h { color: #ffb142; }
+        .size-d { color: #ff9a3c; }
+        #instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 13px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #no-selection {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 24px;
+            pointer-events: none;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div id="info-panel">
+        <h2>Cube Inspector</h2>
+        <div id="cube-info">
+            <div class="placeholder">Click a cube to see its information here.</div>
+        </div>
+    </div>
+    <div id="instructions">
+        🖱️ Click on any cube to inspect it • Camera rotates automatically
+    </div>
+    <div id="no-selection">No object selected</div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
